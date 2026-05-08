@@ -1,0 +1,42 @@
+# ─────────────────────────────────────────────────────────────
+#  ResilientLink PHP SDK — Notify Packagist on release
+#  Repo: silentgodenterprise/resilientlink-php
+#
+#  HOW PHP/PACKAGIST WORKS (different from npm/PyPI):
+#  Packagist reads directly from your GitHub repo.
+#  You don't upload a package — you register the repo once,
+#  then Packagist auto-syncs on every push/tag via webhook.
+#
+#  ONE-TIME SETUP:
+#  1. Go to packagist.org → Submit → paste your GitHub repo URL
+#  2. Go to packagist.org → your package → Edit → GitHub Webhook
+#     Copy the webhook URL and secret
+#  3. Go to GitHub repo → Settings → Webhooks → Add webhook
+#     Paste the Packagist webhook URL + secret
+#
+#  After that, every git tag automatically updates Packagist.
+#  This workflow just triggers the sync manually as a backup.
+#
+#  Required GitHub secrets:
+#    PACKAGIST_USERNAME  →  your packagist.org username
+#    PACKAGIST_TOKEN     →  packagist.org → Profile → API Token
+# ─────────────────────────────────────────────────────────────
+
+name: Notify Packagist
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Packagist of new version
+        run: |
+          curl -XPOST \
+            -H "Content-Type: application/json" \
+            "https://packagist.org/api/update-package?username=${{ secrets.PACKAGIST_USERNAME }}&apiToken=${{ secrets.PACKAGIST_TOKEN }}" \
+            -d '{"repository":{"url":"https://github.com/silentgodenterprise/resilientlink-php"}}'
+          echo "Packagist notified — it will pull the latest tag automatically."
