@@ -32,7 +32,7 @@ class ResilientLinkException extends \RuntimeException
 
 class Client
 {
-    private const DEFAULT_BASE_URL = 'https://resilientlink-api.vercel.app';
+    private const DEFAULT_BASE_URL = 'https://api.resilientlink.silentgode.com';
     private const DEFAULT_TIMEOUT  = 60;
     private const SDK_VERSION      = '1.0.0';
 
