@@ -1,0 +1,18 @@
+{
+  "name": "resilientlink/resilientlink-php",
+  "description": "Official PHP SDK for the ResilientLink Web Scraping API",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    { "name": "ResilientLink", "email": "support@resilientlink.io" }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": { "ResilientLink\\": "src/" }
+  },
+  "minimum-stability": "stable"
+}
