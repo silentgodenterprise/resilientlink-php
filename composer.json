@@ -4,7 +4,7 @@
   "type": "library",
   "license": "MIT",
   "authors": [
-    { "name": "ResilientLink", "email": "support@resilientlink.io" }
+    { "name": "Silent God Enterprise", "email": "resilientlink@silentgode.com" }
   ],
   "require": {
     "php": ">=7.4",
