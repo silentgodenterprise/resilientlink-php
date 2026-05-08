@@ -1,6 +1,6 @@
 # ResilientLink PHP SDK
 
-Official PHP client for the [ResilientLink](https://resilientlink.io) Web Scraping API.
+Official PHP client for the [ResilientLink](https://resilientlink.silentgode.com) Web Scraping API.
 
 ## Requirements
 - PHP >= 7.4
@@ -51,8 +51,7 @@ $result = $client->scrape('https://example.com', [
 [
   'success'      => true,
   'cached'       => false,
-  'tier'         => 'starter',
-  'engine'       => 'axios',
+  'tier'         => '...',
   'responseTime' => 412,
   'data'         => [
     'url'         => 'https://example.com',
@@ -86,4 +85,4 @@ try {
 
 ## Get Your API Key
 
-Sign up at [resilientlink.io](https://resilientlink.io) → Dashboard → API Key.
+Sign up at [resilientlink](https://resilientlink.silentgode.com) → Dashboard → API Key.
